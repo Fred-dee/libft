@@ -22,10 +22,31 @@ static int	is_space(int c)
 	return (0);
 }
 
+static int	work(const char *str, int sign)
+{
+	long	ret;
+	char	*tmp;
+	size_t	x;
+
+	x = 0;
+	ret = 0;
+	tmp = (char *)str;
+	while (ft_isdigit(*tmp) > 0 && *tmp != '\0')
+	{
+		ret = ret * 10 + *tmp++ - '0';
+		x++;
+	}
+	if (x > 10 && sign == -1)
+		return (0);
+	if (x > 10)
+		return (-1);
+	return (ret * sign);
+}
+
 int			ft_atoi(const char *str)
 {
 	char	*tmp;
-	int		ret;
+	long	ret;
 	int		sign;
 
 	tmp = (char *)str;
@@ -44,7 +65,7 @@ int			ft_atoi(const char *str)
 		tmp++;
 	if (*tmp == '\0' || ft_isdigit(*tmp) == 0)
 		return (0);
-	while (ft_isdigit(*tmp) > 0 && *tmp != '\0')
-		ret = ret * 10 + *tmp++ - '0';
-	return (ret * sign);
+	while (*tmp == '0' && *tmp != '\0')
+		tmp++;
+	return ((int)work(tmp, sign));
 }

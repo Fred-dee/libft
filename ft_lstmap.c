@@ -21,26 +21,24 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*tmp;
 	t_list	*input;
 
-	ret = NULL;
-	if (lst != NULL)
+	if (lst == NULL)
+		return (NULL);
+	if ((input = f(lst)) == NULL)
+		return (NULL);
+	if ((ret = (t_list**)malloc(sizeof(t_list *))) == NULL)
+		return (NULL);
+	if ((*ret = ft_lstnew(input->content, input->content_size)) == NULL)
+		return (NULL);
+	tmp = *ret;
+	iter = lst->next;
+	while (iter != NULL)
 	{
-		if ((input = f(lst)) == NULL)
+		if ((input = f(iter)) == NULL)
 			return (NULL);
-		if ((ret = (t_list**)malloc(sizeof(t_list *))) == NULL)
+		if (!(tmp->next = ft_lstnew(input->content, input->content_size)))
 			return (NULL);
-		if ((*ret = ft_lstnew(input->content, input->content_size)) == NULL)
-			return (NULL);
-		tmp = *ret;
-		iter = lst->next;
-		while (iter != NULL)
-		{
-			if ((input = f(iter)) == NULL)
-				return (NULL);
-			if (!(tmp->next = ft_lstnew(input->content, input->content_size)))
-				return (NULL);
-			tmp = tmp->next;
-			iter = iter->next;
-		}
+		tmp = tmp->next;
+		iter = iter->next;
 	}
 	return (*ret);
 }

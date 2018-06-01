@@ -34,27 +34,24 @@ char			*ft_strtrim(char const *s)
 	char		*ret;
 	size_t		n_size;
 
-	ret = NULL;
-	if (s != NULL)
+	if (s == NULL)
+		return (NULL);
+	tmp = s;
+	while (*tmp == ' ' || *tmp == '\t' || *tmp == '\n')
+		tmp++;
+	if (*tmp == '\0')
+		return ("");
+	i = ft_strlen(s) - 1;
+	n_size = ft_strlen(tmp) - white_count(s, &i);
+	if ((ret = ft_strnew(n_size)) != NULL)
 	{
-		tmp = s;
-		while (*tmp == ' ' || *tmp == '\t' || *tmp == '\n')
-			tmp++;
-		if (*tmp == '\0')
-			return ("");
-		i = ft_strlen(s) - 1;
-		n_size = ft_strlen(tmp) - white_count(s, &i);
-		ret = ft_strnew(n_size);
-		if (ret != NULL)
+		i = 0;
+		while (tmp[i] != '\0' && i < n_size)
 		{
-			i = 0;
-			while (tmp[i] != '\0' && i < n_size)
-			{
-				ret[i] = tmp[i];
-				i++;
-			}
-			ret[i] = '\0';
+			ret[i] = tmp[i];
+			i++;
 		}
+		ret[i] = '\0';
 	}
 	return (ret);
 }
