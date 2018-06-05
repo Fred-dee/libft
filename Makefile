@@ -12,7 +12,7 @@
 
 NAME = libft.a
 SRC =	$(wildcard *.c)
-OBJ =	$(SRC:.c=.o)
+OBJ =	$(SRC:%.c=%.o)
 FLAGS = -Wall \
 		-Wextra \
 		-Werror \
@@ -24,12 +24,12 @@ $(NAME): $(OBJ)
 	ranlib $(NAME)
 
 $(OBJ): $(SRC)
-	gcc $(FLAGS) -c libft.h $(SRC)
+	gcc $(FLAGS) -c -I. libft.h $(SRC)
 
 clean:
-	rm -f $(OBJ)
+	/bin/rm -f $(OBJ)
 
-fclean:
-	rm -f $(NAME)
+fclean: clean
+	/bin/rm -f $(NAME)
 
-re: fclean clean all
+re: fclean all
