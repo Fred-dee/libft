@@ -6,7 +6,7 @@
 /*   By: mdilapi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/21 13:33:31 by mdilapi           #+#    #+#             */
-/*   Updated: 2018/05/21 13:33:33 by mdilapi          ###   ########.fr       */
+/*   Updated: 2018/06/11 08:55:34 by mdilapi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ static int	work(const char *str, int sign)
 int			ft_atoi(const char *str)
 {
 	char	*tmp;
-	long	ret;
 	int		sign;
 
 	tmp = (char *)str;
@@ -54,7 +53,6 @@ int			ft_atoi(const char *str)
 		tmp++;
 	if (*tmp == '\0')
 		return (0);
-	ret = 0;
 	sign = 1;
 	if (*tmp == '-')
 	{
