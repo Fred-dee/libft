@@ -46,6 +46,13 @@ SRC =	ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_putstr.c \
 		ft_putstr_fd.c \
+		ft_stackempty.c \
+		ft_stacknew.c \
+		ft_stackpnew.c \
+		ft_stackpop.c \
+		ft_stackpush.c \
+		ft_stacksize.c \
+		ft_stacktop.c \
 		ft_strcat.c \
 		ft_strchr.c \
 		ft_strclr.c \
@@ -73,7 +80,8 @@ SRC =	ft_atoi.c \
 		ft_strsub.c \
 		ft_strtrim.c \
 		ft_tolower.c \
-		ft_toupper.c
+		ft_toupper.c \
+
 OBJ =	$(SRC:%.c=%.o)
 FLAGS = -Wall \
 		-Wextra \
@@ -84,9 +92,10 @@ all: $(NAME)
 $(NAME): $(OBJ) 
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
+	find . -name "*.h.gch" -delete
 
 $(OBJ): $(SRC)
-	gcc $(FLAGS) -c -I. libft.h $(SRC)
+	gcc $(FLAGS) -c -I. libft.h stack.h $(SRC)
 
 clean:
 	/bin/rm -f $(OBJ)
