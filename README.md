@@ -1,2 +1,2 @@
 # libft
-Work as done for the libft project for 42
+This project is an ever growing library of data structures as well as libc functions
