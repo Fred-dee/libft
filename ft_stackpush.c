@@ -14,12 +14,14 @@
 
 void	ft_stackpush(t_stack *s, t_list *elem)
 {
-	t_list *tmp;
-
 	if (s != NULL)
 	{
-		tmp = s->head;
-		ft_lstadd(&tmp, elem);
+		if(s->head != NULL)
+			ft_lstadd(&s->head, elem);
+		else
+		{
+			s->head = ft_lstnew(elem->content, elem->content_size);
+		}
 		s->size += 1;
 	}
 }
