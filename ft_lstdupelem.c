@@ -23,5 +23,6 @@ t_list	*ft_lstdupelem(t_list *elem)
 	ret->content = ft_memalloc(elem->content_size);
 	ft_memmove(ret->content, elem->content, elem->content_size);
 	ret->content_size = elem->content_size;
+	ret->next = NULL;
 	return (ret);
 }

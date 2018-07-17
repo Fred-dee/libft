@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdup.c                                        :+:      :+:    :+:   */
+/*   ft_stackdup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdilapi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/17 11:28:26 by mdilapi           #+#    #+#             */
-/*   Updated: 2018/07/17 11:28:28 by mdilapi          ###   ########.fr       */
+/*   Created: 2018/07/17 11:40:12 by mdilapi           #+#    #+#             */
+/*   Updated: 2018/07/17 11:40:13 by mdilapi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "stack.h"
 
-t_list	*ft_lstdup(t_list **alst)
+t_stack	*ft_stackdup(t_stack *s)
 {
-	t_list	*head;
-	t_list	*tmp;
-	t_list	*atmp;
+	t_stack *ret;
 
-	head = NULL;
-	if(alst != NULL && *alst != NULL)
+	ret = NULL;
+	if (s != NULL)
 	{
-		atmp = *alst;
-		head = ft_lstdupelem(atmp);
-		tmp = head;
-		atmp = atmp->next;
-		while(atmp != NULL)
-		{
-			tmp->next = ft_lstdupelem(atmp);
-			tmp = tmp->next;
-			atmp = atmp->next;
-		}
+		if((ret = ft_stacknew(NULL, 0)) == NULL)
+			return (NULL);
+		ret->head = ft_lstdup(&s->head);
+		ret->size = s->size;
 	}
-	return (head);
+	return (ret);
 }
