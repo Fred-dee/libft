@@ -30,6 +30,8 @@ SRC =	ft_atoi.c \
 		ft_lstat.c \
 		ft_lstdel.c \
 		ft_lstdelone.c \
+		ft_lstdup.c \
+		ft_lstdupeem.c \
 		ft_lstgettail.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
@@ -54,7 +56,6 @@ SRC =	ft_atoi.c \
 		ft_stack_swap_top.c\
 		ft_stackdel.c \
 		ft_stackempty.c \
-		ft_stackmax.c \
 		ft_stacknew.c \
 		ft_stackpop.c \
 		ft_stackpush.c \
