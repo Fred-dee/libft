@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H_
-# define STACK_H_
+#ifndef STACK_H
+# define STACK_H
 # include "libft.h"
 # define TRUE 1
 # define FALSE 0
 
-typedef struct s_stack
+typedef struct	s_stack
 {
 	t_list		*head;
 	size_t		size;

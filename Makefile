@@ -52,6 +52,7 @@ SRC =	ft_atoi.c \
 		ft_putnbr.c \
 		ft_putnbr_fd.c \
 		ft_putstr.c \
+		ft_putstr_clr.c \
 		ft_putstr_fd.c \
 		ft_stack_swap_top.c\
 		ft_stackdel.c \
@@ -106,7 +107,7 @@ $(NAME): $(OBJ)
 	find . -name "*.h.gch" -delete
 
 $(OBJ): $(SRC)
-	gcc $(FLAGS) -c -I. libft.h stack.h $(SRC)
+	gcc $(FLAGS) -c -I. libft.h stack.h colours.h $(SRC)
 
 clean:
 	/bin/rm -f $(OBJ)

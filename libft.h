@@ -14,6 +14,7 @@
 # define LIBFT_H
 # define ABS(Value) (Value * ((Value > 0) - (Value < 0)))
 
+# include "colours.h"
 # include <stdlib.h>
 # include <string.h>
 
@@ -32,6 +33,7 @@ void					ft_putendl(char const *s);
 void					ft_putendl_fd(char const *s, int fd);
 void					ft_putnbr(int n);
 void					ft_putnbr_fd(int n, int fd);
+void					ft_putstr_clr(char const *clr, char const *str);
 void					ft_putstr_fd(char const *s, int fd);
 char					*ft_strcat(char *s1, const char *s2);
 void					ft_putstr(char const *s);
