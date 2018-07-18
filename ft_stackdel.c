@@ -16,6 +16,7 @@ static void	del_function(void *i, size_t a)
 {
 	ft_memdel(&i);
 	a = 0;
+	(void)a;
 }
 
 void		ft_stackdel(t_stack *s)
