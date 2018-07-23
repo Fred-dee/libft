@@ -7,7 +7,7 @@ static void	recursive(int n)
 	ft_putchar(ABS(ABS(n) % 10) + '0');
 }
 
-void		ft_putnbr(char const *clr, int n)
+void		ft_putnbr_clr(char const *clr, int n)
 {
 	ft_putstr(clr);
 	if (n < 0)
