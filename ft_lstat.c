@@ -21,6 +21,7 @@ t_list	*ft_lstat(t_list *head, size_t index)
 	if (head != NULL)
 	{
 		i = 0;
+		tmp = head;
 		while (i < index && tmp != NULL)
 		{
 			i++;
