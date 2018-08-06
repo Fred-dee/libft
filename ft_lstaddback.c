@@ -15,6 +15,7 @@
 void	ft_lstaddback(t_list **alst, t_list *new)
 {
 	t_list	*tmp;
+
 	tmp = *alst;
 	if (tmp != NULL)
 	{

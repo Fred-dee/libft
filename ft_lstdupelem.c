@@ -16,9 +16,9 @@ t_list	*ft_lstdupelem(t_list *elem)
 {
 	t_list	*ret;
 
-	if(elem == NULL)
+	if (elem == NULL)
 		return (NULL);
-	if((ret = (t_list *)malloc(sizeof(t_list))) == NULL)
+	if ((ret = (t_list *)malloc(sizeof(t_list))) == NULL)
 		return (NULL);
 	ret->content = ft_memalloc(elem->content_size);
 	ft_memmove(ret->content, elem->content, elem->content_size);

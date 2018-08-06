@@ -17,15 +17,14 @@ void	ft_stackrevrotate(t_stack *s)
 	t_stack *b;
 	t_list	*tail;
 
-	if(ft_stackempty(s) == FALSE)
+	if (ft_stackempty(s) == FALSE)
 	{
 		b = ft_stacknew(NULL, 0);
-		while(s->size > 1)
+		while (s->size > 1)
 			ft_stackpush(b, ft_stackpop(s));
 		tail = ft_stackpop(s);
-		while(ft_stackempty(b) == FALSE)
+		while (ft_stackempty(b) == FALSE)
 			ft_stackpush(s, ft_stackpop(b));
 		ft_stackpush(s, tail);
 	}
-
 }

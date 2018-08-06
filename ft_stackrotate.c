@@ -17,14 +17,14 @@ void	ft_stackrotate(t_stack *s)
 	t_list	*head;
 	t_stack	*b;
 
-	if(ft_stackempty(s) == FALSE)
+	if (ft_stackempty(s) == FALSE)
 	{
 		head = ft_stackpop(s);
 		b = ft_stacknew(NULL, 0);
-		while(ft_stackempty(s) == FALSE)
+		while (ft_stackempty(s) == FALSE)
 			ft_stackpush(b, ft_stackpop(s));
 		ft_stackpush(s, head);
-		while(ft_stackempty(b) == FALSE)
+		while (ft_stackempty(b) == FALSE)
 			ft_stackpush(s, ft_stackpop(b));
 	}
 }

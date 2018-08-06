@@ -26,7 +26,7 @@ t_list	*ft_stackmax(t_stack *s, int (*cmp)(void *, void *))
 		{
 			tmp = tmp->next;
 			if (cmp(ret->content, tmp->content) < 0)
-				ret = tmp;			
+				ret = tmp;
 		}
 	}
 	return (ret);

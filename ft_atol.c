@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 #include <string.h>
 
@@ -59,4 +58,3 @@ long		ft_atol(const char *str)
 		tmp++;
 	return (work(tmp, sign));
 }
-

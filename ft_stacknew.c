@@ -18,7 +18,7 @@ t_stack	*ft_stacknew(void const *content, size_t content_size)
 
 	if ((ret = (t_stack *)malloc(sizeof(t_stack))) == NULL)
 		return (NULL);
-	if(content != NULL)
+	if (content != NULL)
 	{
 		ret->head = ft_lstnew(content, content_size);
 		ret->size = 1;

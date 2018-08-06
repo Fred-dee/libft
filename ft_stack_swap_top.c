@@ -17,7 +17,7 @@ void			ft_stack_swap_top(t_stack *s)
 	t_list	*first;
 	t_list	*second;
 
-	if(s != NULL && s->size > 1)
+	if (s != NULL && s->size > 1)
 	{
 		first = ft_stackpop(s);
 		second = ft_stackpop(s);

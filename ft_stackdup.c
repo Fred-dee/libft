@@ -19,7 +19,7 @@ t_stack	*ft_stackdup(t_stack *s)
 	ret = NULL;
 	if (s != NULL)
 	{
-		if((ret = ft_stacknew(NULL, 0)) == NULL)
+		if ((ret = ft_stacknew(NULL, 0)) == NULL)
 			return (NULL);
 		ret->head = ft_lstdup(&s->head);
 		ret->size = s->size;

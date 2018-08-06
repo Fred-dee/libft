@@ -19,13 +19,13 @@ t_list	*ft_lstdup(t_list **alst)
 	t_list	*atmp;
 
 	head = NULL;
-	if(alst != NULL && *alst != NULL)
+	if (alst != NULL && *alst != NULL)
 	{
 		atmp = *alst;
 		head = ft_lstdupelem(atmp);
 		tmp = head;
 		atmp = atmp->next;
-		while(atmp != NULL)
+		while (atmp != NULL)
 		{
 			tmp->next = ft_lstdupelem(atmp);
 			tmp = tmp->next;

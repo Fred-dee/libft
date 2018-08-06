@@ -16,7 +16,7 @@ void	ft_stackpush(t_stack *s, t_list *elem)
 {
 	if (s != NULL)
 	{
-		if(s->head != NULL)
+		if (s->head != NULL)
 			ft_lstadd(&s->head, elem);
 		else
 		{
