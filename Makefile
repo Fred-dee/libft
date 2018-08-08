@@ -56,6 +56,7 @@ SRC =	ft_atoi.c \
 		ft_putstr.c \
 		ft_putstr_clr.c \
 		ft_putstr_fd.c \
+		ft_stack_indexof.c \
 		ft_stack_swap_top.c\
 		ft_stackdel.c \
 		ft_stackdup.c \
