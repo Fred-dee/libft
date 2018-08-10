@@ -104,23 +104,25 @@ STACK_SRC_NAME=	ft_stack_indexof.c \
 				ft_stacksize.c \
 				ft_stacktop.c \
 
-SRC = $(addprefix $(LIB_SRC_PATH), $(LIB_SRC_NAME)) $(addprefix $(STACK_SRC_PATH), $(STACK_SRC_NAME))
-OBJ_NAME = $(STACK_SRC_NAME:%.c=%.o) $(LIB_SRC_NAME:%.c=%.o)
+SRC = $(addprefix $(LIB_SRC_PATH), $(LIB_SRC_NAME))
+SRC += $(addprefix $(STACK_SRC_PATH), $(STACK_SRC_NAME))
+OBJ_NAME =  $(LIB_SRC_NAME:%.c=%.o)
+OBJ_NAME += $(STACK_SRC_NAME:%.c=%.o)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
-FLAGS = -Wall \
-		-Wextra \
-		-Werror \
+
+FLAGS = -Wall -Wextra -Werror
+CC = gcc $(FLAGS)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) 
+$(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 	find . -name "*.h.gch" -delete
 
-$(OBJ): $(SRC)
+$(OBJ)%.o: $(basename $(SRC))%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) -I$(INC_PATH) -o $@ -c $<
+	$(CC) -I ./includes/ -c $^ -o $@ 
 
 clean:
 	/bin/rm -f $(OBJ)
