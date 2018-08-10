@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include <stack.h>
 
 t_list	*ft_stackmax(t_stack *s, int (*cmp)(void *, void *))
 {

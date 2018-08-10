@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include <stack.h>
 
 static void	del_function(void *i, size_t a)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include <stack.h>
 
 int	ft_stack_indexof(t_stack *s, t_list *elem)
 {

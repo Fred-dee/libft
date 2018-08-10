@@ -15,6 +15,7 @@ INC_PATH=./includes/
 LIB_SRC_PATH =./lib_src/
 STACK_SRC_PATH=./stack_src/
 GRAPH_SRC_PATH=./graph_src/
+OBJ_PATH=./objs/
 
 LIB_SRC_NAME =	ft_atoi.c \
 				ft_atol.c \
@@ -104,7 +105,8 @@ STACK_SRC_NAME=	ft_stack_indexof.c \
 				ft_stacktop.c \
 
 SRC = $(addprefix $(LIB_SRC_PATH), $(LIB_SRC_NAME)) $(addprefix $(STACK_SRC_PATH), $(STACK_SRC_NAME))
-OBJ = $(SRC:%.c=%.o)
+OBJ_NAME = $(STACK_SRC_NAME:%.c=%.o) $(LIB_SRC_NAME:%.c=%.o)
+OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 FLAGS = -Wall \
 		-Wextra \
 		-Werror \
@@ -117,7 +119,8 @@ $(NAME): $(OBJ)
 	find . -name "*.h.gch" -delete
 
 $(OBJ): $(SRC)
-	gcc $(FLAGS) -c -I. libft.h stack.h colours.h $(SRC)
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
+	@$(CC) -I$(INC_PATH) -o $@ -c $<
 
 clean:
 	/bin/rm -f $(OBJ)

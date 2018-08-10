@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 #include <string.h>
 
 static int	is_found(const char *s1, const char *s2, size_t k, size_t len)

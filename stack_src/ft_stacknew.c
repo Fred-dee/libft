@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
+#include <stack.h>
 
 t_stack	*ft_stacknew(void const *content, size_t content_size)
 {
