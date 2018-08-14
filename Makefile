@@ -31,8 +31,9 @@ $(NAME): SUBDIR
 	find . -name "*.h.gch" -delete
 
 SUBDIR:
-	make -C./lib_src/
-	make -C./stack_src/
+	@make -C $(LIB_SRC_PATH)
+	@make -C $(STACK_SRC_PATH)
+	@make -C $(GRAPH_SRC_PATH)
 
 clean:
 	/bin/rm -f $(OBJ)
