@@ -18,7 +18,13 @@ int main(void)
 	t_graph *g;
 
 	g = ft_graph_new();
-	g->num_vertices = 2;
+	g->num_vertices = 4;
+	ft_graph_genmatrices(g);
+	ft_graph_print(g);
+	ft_graph_addvertex(g, ft_graph_vertexnew("a", 0, 0, 5));
+	ft_graph_addvertex(g, ft_graph_vertexnew("b", 0, 2, 0));
+	ft_graph_addvertex(g, ft_graph_vertexnew("c", 0, 3, 0));
+	ft_graph_addvertex(g, ft_graph_vertexnew("d", 0, 5, 0));
 	
 	return (0);
 }

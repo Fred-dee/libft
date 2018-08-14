@@ -36,5 +36,7 @@ void	ft_graph_addvertex(t_graph *g, t_vertex *v)
 			v->number = i;
 			ft_lstaddback(&g->vertices, ft_lstnew(v, sizeof(v)));
 		}
+		g->num_vertices++;
+		g->total_ants++;
 	}
 }

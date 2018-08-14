@@ -31,12 +31,14 @@ $(NAME): SUBDIR
 	find . -name "*.h.gch" -delete
 
 SUBDIR:
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	@make -C $(LIB_SRC_PATH)
 	@make -C $(STACK_SRC_PATH)
 	@make -C $(GRAPH_SRC_PATH)
 
 clean:
 	/bin/rm -f $(OBJ)
+	/bin/rm -rf $(OBJ_PATH) 2> /dev/null || true
 
 fclean: clean
 	/bin/rm -f $(NAME)
