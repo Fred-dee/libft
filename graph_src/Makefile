@@ -15,6 +15,8 @@ OBJ_PATH=../objs/
 SRC_NAME=	ft_graph_addedge.c \
 			ft_graph_addvertex.c \
 			ft_graph_genmatrices.c \
+			ft_graph_getvertex_byid.c \
+			ft_graph_getvertex_byname.c \
 			ft_graph_new.c \
 			ft_graph_print.c \
 			ft_graph_vertexnew.c 
