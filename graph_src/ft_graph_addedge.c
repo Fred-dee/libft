@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <graph.h>
+#include <stdio.h>
 
 void	ft_graph_addedge(t_graph *g, int from, int to)
 {
@@ -39,6 +40,6 @@ void	ft_graph_addedge(t_graph *g, int from, int to)
 				to_v->neighbours = ft_lstnew(num_1, sizeof(int));
 			else
 				ft_lstaddback(&to_v->neighbours, ft_lstnew(num_1, sizeof(int)));
-		} 
+		}
 	}
 }

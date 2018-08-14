@@ -1,4 +1,5 @@
 #include <graph.h>
+#include <stdio.h>
 
 t_vertex	*ft_graph_getvertex_byid(t_graph *g, int id)
 {
