@@ -21,17 +21,18 @@ OBJ_PATH=./objs/
 FLAGS = -Wall -Wextra -Werror
 CC = gcc $(FLAGS)
 
-OBJ= $(wildcard ./objs/*.o) 
+OBJ= $(wildcard ./objs/*.o)
+
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): SUBDIR
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 	find . -name "*.h.gch" -delete
-$(OBJ):
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	make -C ./lib_src
-	make -C ./stack_src
+
+SUBDIR:
+	make -C./lib_src/
+	make -C./stack_src/
 
 clean:
 	/bin/rm -f $(OBJ)
