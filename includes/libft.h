@@ -46,6 +46,7 @@ char					*ft_strdup(const char *s);
 char					*ft_strchr(const char *s, int c);
 void					ft_strclr(char *s);
 char					*ft_strcpy(char	*s1, const char *s2);
+int						ft_strindexof(const char *s, const char c);
 void					ft_striter(char *s, void (*f)(char *));
 void					ft_striteri(char *s, void (*f)(unsigned int, char *));
 char					*ft_strjoin(char const *s1, char const *s2);
