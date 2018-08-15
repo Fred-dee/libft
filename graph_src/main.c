@@ -18,19 +18,24 @@ int main(void)
 	t_graph 	*g;
 	t_vertex	*tmp;
 	t_list		*iter;
+	t_vertex	*rand;
+
 	g = ft_graph_new();
-	ft_graph_addvertex(g, ft_graph_vertexnew("a", 0, 0, 5));
+	rand = ft_graph_vertexnew("a", 0, 0, 5);
+	ft_graph_addvertex(g, rand);
 	ft_graph_addvertex(g, ft_graph_vertexnew("b", 0, 2, 0));
 	ft_graph_addvertex(g, ft_graph_vertexnew("c", 0, 3, 0));
 	ft_graph_addvertex(g, ft_graph_vertexnew("d", 0, 5, 0));
-	ft_graph_genmatrices(g);
-	ft_graph_print(g);
-	printf("\n");
-
+	//ft_graph_genmatrices(g);
+	//ft_graph_print(g);
+	//printf("\n");
+ 	printf("%p\n",rand->neighbours);
 	ft_graph_addedge(g, 0, 2);
 	ft_graph_addedge(g, 0, 1);
+	ft_graph_addedge(g, 1, 3);
+	ft_graph_genmatrices(g);
 	ft_graph_print(g);
-	tmp = ft_graph_getvertex_byname(g, "a");
+	tmp = ft_graph_getvertex_byname(g, "b");
 	if (tmp != NULL)
 	{
 		printf("I got vertex: %s\n",tmp->name);

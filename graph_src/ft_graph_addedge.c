@@ -20,10 +20,8 @@ void	ft_graph_addedge(t_graph *g, int from, int to)
 	t_vertex	*from_v;
 	t_vertex	*to_v;
 
-	if (g != NULL  && g->adj_matrix != NULL && from < g->num_vertices && to < g->num_vertices)
+	if (g != NULL && from < g->num_vertices && to < g->num_vertices)
 	{
-		g->adj_matrix[from][to] = 1;
-		g->adj_matrix[to][from] = 1;
 		from_v = ft_graph_getvertex_byid(g, from);
 		to_v = ft_graph_getvertex_byid(g, to);
 		if (from_v != NULL && to_v != NULL)

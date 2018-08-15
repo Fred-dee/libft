@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <graph.h>
+#include <stdio.h>
 
 void	ft_graph_addvertex(t_graph *g, t_vertex *v)
 {
@@ -18,12 +19,12 @@ void	ft_graph_addvertex(t_graph *g, t_vertex *v)
 	t_list	*atmpt;
 	int		i;
 
-	if (g != NULL)
+	if (g != NULL && v != NULL)
 	{
 		if (g->vertices == NULL)
 		{
 			v->number = 0;
-			g->vertices = ft_lstnew(v, sizeof(v));
+			ft_lstadd(&g->vertices, ft_lstnew(v, sizeof(t_vertex)));
 		}
 		else
 		{
@@ -34,10 +35,11 @@ void	ft_graph_addvertex(t_graph *g, t_vertex *v)
 				tmp = tmp->next;
 				i++;
 			}
-			ft_lstaddback(&g->vertices, ft_lstnew(v, sizeof(v)));
+			ft_lstaddback(&g->vertices, ft_lstnew(v, sizeof(t_vertex)));
 			atmpt = ft_lstgettail(g->vertices);
 			((t_vertex *)atmpt->content)->number = i;
 		}
 		g->num_vertices++;
+		atmpt = NULL;
 	}
 }

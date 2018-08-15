@@ -11,7 +11,7 @@ t_vertex	*ft_graph_getvertex_byid(t_graph *g, int id)
 		while (tmp != NULL)
 		{
 			if (id == ((t_vertex *)tmp->content)->number)
-				return (tmp->content);
+				return ((t_vertex *)tmp->content);
 			tmp = tmp->next;
 		}
 	}
