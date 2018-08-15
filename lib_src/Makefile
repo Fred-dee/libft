@@ -37,6 +37,7 @@ SRC_NAME =	ft_atoi.c \
 				ft_lstmap.c \
 				ft_lstnew.c \
 				ft_lstquicksort.c \
+				ft_lstsize.c \
 				ft_memalloc.c \
 				ft_memcpy.c \
 				ft_memccpy.c \

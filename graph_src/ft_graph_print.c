@@ -28,5 +28,6 @@ void	ft_graph_print(t_graph *g)
 			ft_putchar('\n');
 			i++;
 		}
+		ft_putchar('\n');
 	}
 }
