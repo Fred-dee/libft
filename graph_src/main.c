@@ -32,9 +32,10 @@ int main(void)
  	printf("%p\n",rand->neighbours);
 	ft_graph_addedge(g, 0, 2);
 	ft_graph_addedge(g, 0, 1);
+	ft_graph_addedge(g, 1, 3);
 	ft_graph_genmatrices(g);
 	ft_graph_print(g);
-	tmp = ft_graph_getvertex_byname(g, "a");
+	tmp = ft_graph_getvertex_byname(g, "b");
 	if (tmp != NULL)
 	{
 		printf("I got vertex: %s\n",tmp->name);
