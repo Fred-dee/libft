@@ -28,12 +28,13 @@ SRC_NAME=	ft_stack_indexof.c \
 FLAGS= -Wall -Werror -Wextra
 OBJ = $(SRC_NAME:%.c=%.o)
 CC = gcc $(FLAGS)
+FILES=$(addprefix $(OBJ_PATH), $(OBJ))
 
-all: $(OBJ)
-	mv *.o $(OBJ_PATH)
-
-$(OBJ): $(SRC_NAME)
+all: $(SRC_NAME)
+ifeq ("$(wildcard $(FILES))","")
 	$(CC) -I$(INCLUDES) -c $(SRC_NAME)
+	mv *.o $(OBJ_PATH)
+endif
 
 clean:
 	/bin/rm -f $(addprefix $(OBJ_PATH), $(OBJ))
