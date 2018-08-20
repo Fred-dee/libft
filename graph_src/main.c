@@ -53,5 +53,11 @@ int main(void)
 	}
 	else
 		printf("get vertex returned null\n");
+	printf("going to try deleting the graph\n");
+	ft_graph_del(g);
+	if (g == NULL)
+		printf("succesfully deleted\n");
+	else
+		printf("unsucessfull delete\n");
 	return (0);
 }

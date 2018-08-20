@@ -18,6 +18,7 @@ typedef struct	s_vertex
 {
 	char		*name;
 	int			number;
+	int			ant_name;
 	t_list		*neighbours;
 	int			num_ants;
 	int			x_cord;
@@ -42,4 +43,6 @@ t_vertex		*ft_graph_getvertex_byid(t_graph *g, int id);
 t_vertex		*ft_graph_getvertex_byname(t_graph *g, char *str);
 void			ft_graph_print(t_graph *g);
 void			ft_graph_addvertex(t_graph *g, t_vertex *v);
+void			ft_graph_del(t_graph *g);
+void			ft_graph_vertexdel(t_vertex *v);
 #endif
