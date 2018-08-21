@@ -1,17 +1,17 @@
 #include <graph.h>
 
-void	ft_graph_vertexdel(t_vertex *v)
+void	ft_graph_vertexdel(t_vertex **v)
 {
 	t_list	*tmp;
 	t_list	*prev;
 
-	if (v != NULL)
+	if (v != NULL && *v != NULL)
 	{
-		if (v->name != NULL)
-			ft_strdel(&v->name);
-		if (v->neighbours != NULL)
+		if (v[0]->name != NULL)
+			ft_strdel(&v[0]->name);
+		if (v[0]->neighbours != NULL)
 		{
-			tmp = v->neighbours;
+			tmp = v[0]->neighbours;
 			while (tmp != NULL)
 			{
 				prev = tmp;
@@ -22,5 +22,6 @@ void	ft_graph_vertexdel(t_vertex *v)
 				prev = NULL;
 			}
 		}
+		ft_memdel((void **)v);
 	}
 }

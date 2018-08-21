@@ -1,36 +1,34 @@
 #include <graph.h>
 #include <stdio.h>
 
-void	ft_graph_del(t_graph *g)
+void	ft_graph_del(t_graph **g)
 {
 	t_list	*tmp;
 	t_list	*prev;
 	int		i;
 
-	printf("I actully ran ft_graph_del\n");
-	if (g != NULL)
+	if (g != NULL && *g != NULL)
 	{
-		if (g->adj_matrix != NULL)
+		if (g[0]->adj_matrix != NULL)
 		{
 			i = 0;
-			while (i < g->num_vertices)
-				free(g->adj_matrix[i++]);
-			free(g->adj_matrix);
-			g->adj_matrix = NULL;
+			while (i < g[0]->num_vertices)
+				free(g[0]->adj_matrix[i++]);
+			free(g[0]->adj_matrix);
+			g[0]->adj_matrix = NULL;
 		}
-		if (g->vertices != NULL)
+		if (g[0]->vertices != NULL)
 		{
-			tmp = g->vertices;
+			tmp = g[0]->vertices;
 			while (tmp != NULL)
 			{
 				prev = tmp;
 				tmp = tmp->next;
-				ft_graph_vertexdel(prev->content);
+				ft_graph_vertexdel((t_vertex **)&prev->content);
 				free(prev);
 				prev = NULL;
 			}
 		}
-		free(g);
-		g = NULL;
+		ft_memdel((void **)g);
 	}
 }
