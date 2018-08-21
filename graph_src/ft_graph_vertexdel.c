@@ -8,10 +8,7 @@ void	ft_graph_vertexdel(t_vertex *v)
 	if (v != NULL)
 	{
 		if (v->name != NULL)
-		{
-			free(v->name);
-			v->name = NULL;
-		}
+			ft_strdel(&v->name);
 		if (v->neighbours != NULL)
 		{
 			tmp = v->neighbours;
@@ -20,7 +17,7 @@ void	ft_graph_vertexdel(t_vertex *v)
 				prev = tmp;
 				tmp = tmp->next;
 				if (prev->content != NULL)
-					free(prev->content);
+					ft_memdel(&prev->content);
 				free(prev);
 				prev = NULL;
 			}

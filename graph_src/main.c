@@ -26,9 +26,6 @@ int main(void)
 	ft_graph_addvertex(g, ft_graph_vertexnew("b", 0, 2, 0));
 	ft_graph_addvertex(g, ft_graph_vertexnew("c", 0, 3, 0));
 	ft_graph_addvertex(g, ft_graph_vertexnew("d", 0, 5, 0));
-	//ft_graph_genmatrices(g);
-	//ft_graph_print(g);
-	//printf("\n");
  	printf("%p\n",rand->neighbours);
 	ft_graph_addedge(g, 0, 2);
 	ft_graph_addedge(g, 0, 1);
@@ -59,5 +56,7 @@ int main(void)
 		printf("succesfully deleted\n");
 	else
 		printf("unsucessfull delete\n");
+	while (1)
+	{}
 	return (0);
 }

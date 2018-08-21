@@ -1,4 +1,5 @@
 #include <graph.h>
+#include <stdio.h>
 
 void	ft_graph_del(t_graph *g)
 {
@@ -6,6 +7,7 @@ void	ft_graph_del(t_graph *g)
 	t_list	*prev;
 	int		i;
 
+	printf("I actully ran ft_graph_del\n");
 	if (g != NULL)
 	{
 		if (g->adj_matrix != NULL)
@@ -14,6 +16,7 @@ void	ft_graph_del(t_graph *g)
 			while (i < g->num_vertices)
 				free(g->adj_matrix[i++]);
 			free(g->adj_matrix);
+			g->adj_matrix = NULL;
 		}
 		if (g->vertices != NULL)
 		{
