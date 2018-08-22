@@ -1,1 +1,0 @@
-gcc -I../includes/ main.c -L../ -lft -o test.out
