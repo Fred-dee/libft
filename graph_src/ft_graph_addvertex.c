@@ -40,6 +40,7 @@ void	ft_graph_addvertex(t_graph *g, t_vertex *v)
 			((t_vertex *)atmpt->content)->number = i;
 		}
 		g->num_vertices++;
+		free(v);
 		atmpt = NULL;
 	}
 }
