@@ -1,4 +1,5 @@
 #include <graph.h>
+#include <stdio.h>
 
 void	ft_graph_vertexdel(t_vertex **v)
 {
@@ -18,8 +19,7 @@ void	ft_graph_vertexdel(t_vertex **v)
 				tmp = tmp->next;
 				if (prev->content != NULL)
 					ft_memdel(&prev->content);
-				free(prev);
-				prev = NULL;
+				ft_memdel((void **)&prev);
 			}
 		}
 		ft_memdel((void **)v);

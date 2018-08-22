@@ -25,8 +25,8 @@ void	ft_graph_del(t_graph **g)
 				prev = tmp;
 				tmp = tmp->next;
 				ft_graph_vertexdel((t_vertex **)&prev->content);
-				free(prev);
-				prev = NULL;
+				ft_memdel((void **)&prev);
+				//prev = NULL;
 			}
 		}
 		ft_memdel((void **)g);

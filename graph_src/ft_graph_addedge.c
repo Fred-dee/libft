@@ -26,8 +26,8 @@ void	ft_graph_addedge(t_graph *g, int from, int to)
 		to_v = ft_graph_getvertex_byid(g, to);
 		if (from_v != NULL && to_v != NULL)
 		{
-			num_1 = (int *)ft_memalloc(sizeof(int));
-			num_2 = (int *)ft_memalloc(sizeof(int));
+			num_1 = (int *)malloc(sizeof(int));
+			num_2 = (int *)malloc(sizeof(int));
 			*num_1 = from;
 			*num_2 = to; 
 			if (from_v->neighbours == NULL)
@@ -38,6 +38,8 @@ void	ft_graph_addedge(t_graph *g, int from, int to)
 				to_v->neighbours = ft_lstnew(num_1, sizeof(int));
 			else
 				ft_lstaddback(&to_v->neighbours, ft_lstnew(num_1, sizeof(int)));
+			ft_memdel((void **)&num_1);
+			ft_memdel((void **)&num_2);	
 		}
 	}
 }
