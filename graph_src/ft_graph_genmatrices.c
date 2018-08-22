@@ -12,15 +12,13 @@
 
 #include <graph.h>
 
-static void compile_edges(t_graph *g)
+static void	compile_edges(t_graph *g)
 {
 	t_list		*outer;
 	t_list		*inner;
 	t_vertex	*tmp;
 
-	if(g != NULL && g->adj_matrix != NULL)
-	{
-		outer = g->vertices;
+	if (g != NULL && g->adj_matrix != NULL && (outer = g->vertices) != NULL)
 		while (outer != NULL)
 		{
 			tmp = (t_vertex *)outer->content;
@@ -29,10 +27,8 @@ static void compile_edges(t_graph *g)
 				inner = tmp->neighbours;
 				while (inner != NULL)
 				{
-					if(tmp->number == *(int *)inner->content)
-					{
+					if (tmp->number == *(int *)inner->content)
 						g->adj_matrix[tmp->number][tmp->number]++;
-					}
 					else
 					{
 						g->adj_matrix[tmp->number][*(int *)inner->content] = 1;
@@ -43,24 +39,24 @@ static void compile_edges(t_graph *g)
 			}
 			outer = outer->next;
 		}
-	}
 }
 
-int	ft_graph_genmatrices(t_graph *g)
+int			ft_graph_genmatrices(t_graph *g)
 {
 	int	i;
 	int	j;
 
-
 	if (g != NULL)
 	{
-		if((g->adj_matrix = (int **)malloc(sizeof(int *) * g->num_vertices)) == NULL)
+		if ((g->adj_matrix = (int **)malloc(sizeof(int *)
+			* g->num_vertices)) == NULL)
 			return (FALSE);
 		i = 0;
 		j = 0;
 		while (i < g->num_vertices)
 		{
-			if ((g->adj_matrix[i] = (int *)malloc(sizeof(int) * g->num_vertices)) == NULL)
+			if ((g->adj_matrix[i] = (int *)malloc(sizeof(int)
+				* g->num_vertices)) == NULL)
 				return (FALSE);
 			j = 0;
 			while (j < g->num_vertices)

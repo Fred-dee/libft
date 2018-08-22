@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <graph.h>
-#include <stdio.h>
 
 void	ft_graph_addedge(t_graph *g, int from, int to)
 {
@@ -21,7 +20,7 @@ void	ft_graph_addedge(t_graph *g, int from, int to)
 	t_vertex	*to_v;
 
 	if (g != NULL && from < g->num_vertices && to < g->num_vertices)
-		if ((from_v = ft_graph_getvertex_byid(g, from)) != NULL 
+		if ((from_v = ft_graph_getvertex_byid(g, from)) != NULL
 			&& (to_v = ft_graph_getvertex_byid(g, to)) != NULL)
 		{
 			num_1 = (int *)malloc(sizeof(int));

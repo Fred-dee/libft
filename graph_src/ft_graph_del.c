@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <graph.h>
-#include <stdio.h>
 
 void	ft_graph_del(t_graph **g)
 {
@@ -29,18 +28,14 @@ void	ft_graph_del(t_graph **g)
 			free(g[0]->adj_matrix);
 			g[0]->adj_matrix = NULL;
 		}
-		if (g[0]->vertices != NULL)
-		{
-			tmp = g[0]->vertices;
+		if ((tmp = g[0]->vertices) != NULL)
 			while (tmp != NULL)
 			{
 				prev = tmp;
 				tmp = tmp->next;
 				ft_graph_vertexdel((t_vertex **)&prev->content);
 				ft_memdel((void **)&prev);
-				//prev = NULL;
 			}
-		}
 		ft_memdel((void **)g);
 	}
 }

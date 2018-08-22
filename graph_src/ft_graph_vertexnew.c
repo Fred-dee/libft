@@ -12,7 +12,8 @@
 
 #include <graph.h>
 
-t_vertex	*ft_graph_vertexnew(char *name, int x_cord, int y_cord, int num_ants)
+t_vertex	*ft_graph_vertexnew(char *name, int x_cord,
+	int y_cord, int num_ants)
 {
 	t_vertex	*ret;
 

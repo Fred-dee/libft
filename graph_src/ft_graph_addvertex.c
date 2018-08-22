@@ -15,7 +15,6 @@
 void	ft_graph_addvertex(t_graph *g, t_vertex *v)
 {
 	t_list	*tmp;
-	t_list	*atmpt;
 	int		i;
 
 	if (g != NULL && v != NULL)
@@ -36,11 +35,8 @@ void	ft_graph_addvertex(t_graph *g, t_vertex *v)
 			}
 			v->number = i;
 			ft_lstaddback(&g->vertices, ft_lstnew(v, sizeof(t_vertex)));
-			//atmpt = ft_lstgettail(g->vertices);
-			//((t_vertex *)atmpt->content)->number = i;
 		}
 		g->num_vertices++;
 		free(v);
-		atmpt = NULL;
 	}
 }
