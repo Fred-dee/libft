@@ -20,7 +20,7 @@ void	ft_stackpush(t_stack *s, t_list *elem)
 			ft_lstadd(&s->head, elem);
 		else
 		{
-			s->head = ft_lstnew(elem->content, elem->content_size);
+			ft_lstadd(&s->head, elem);
 		}
 		s->size += 1;
 	}
