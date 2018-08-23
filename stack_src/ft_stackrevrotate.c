@@ -26,5 +26,6 @@ void	ft_stackrevrotate(t_stack *s)
 		while (ft_stackempty(b) == FALSE)
 			ft_stackpush(s, ft_stackpop(b));
 		ft_stackpush(s, tail);
+		ft_stackdel(&b);
 	}
 }
