@@ -11,21 +11,29 @@
 /* ************************************************************************** */
 
 #include <stack.h>
-
+/*
 static void	del_function(void *i, size_t a)
 {
 	ft_memdel(&i);
 	a = 0;
 	(void)a;
 }
-
-void		ft_stackdel(t_stack *s)
+*/
+void		ft_stackdel(t_stack **s)
 {
-	if (s != NULL && s->head != NULL)
+	t_list *tmp;
+	t_list *prev;
+
+	if (s != NULL && *s != NULL && s[0]->head != NULL)
 	{
-		ft_lstdel(&s->head, &del_function);
-		s->size = 0;
+		tmp = s[0]->head;
+		while (tmp != NULL)
+		{
+			prev = tmp;
+			tmp = tmp->next;
+			ft_memdel((void **)&prev->content);
+			ft_memdel((void **)&prev);
+		}
 	}
-	free(s);
-	s = NULL;
+	ft_memdel((void **)s);
 }
